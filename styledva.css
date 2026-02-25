@@ -1,0 +1,279 @@
+:root {
+    /* BARVY - POZADÍ */
+    --bg-body: #676767;
+    --bg-dark: #201d1d;
+    --bg-darker: #333;
+    --bg-header: #3a3a3a;
+    --bg-image-frame: #292525;
+
+    /* BARVY - TABULKA */
+    --bg-table: #ffffff;
+    --bg-table-header: #4CAF50;
+    --bg-row-hover: #55a4b5;
+    --bg-row-selected: #479ae1;
+
+    /* BARVY - TEXT */
+    --text-main: #ffffff;
+    --text-title: #5ECD3DFF;
+    --text-light: #f1f1f1;
+    --text-dark: #000000;
+    --text-accent: #5ecd3d;
+    --text-link: #52bf56;
+    --text-link-hover: #3e8e41;
+    --text-caption: #48df28;
+
+    /* RADIUSY */
+    --radius-small: 8px;
+    --radius-medium: 20px;
+
+    /* STÍNY */
+    --shadow-soft: 0 2px 5px rgba(0,0,0,0.6);
+    --shadow-strong: 0 4px 10px rgba(0,0,0,0.6);
+    --shadow-table: 0 0 10px rgba(0,0,0,0.1);
+
+    /* ROZMĚRY & RÁMEČKY */
+    --spacing-main: 20px;
+    --image-border: 18px solid var(--bg-image-frame);
+}
+
+/* =========================
+   RESET & ZÁKLAD
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    color: var(--text-main);
+    background: linear-gradient(to right, #e1580d, #4c52a8);
+}
+
+/* =========================
+   TYPOGRAFIE
+========================= */
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--text-title);
+}
+
+h1 {
+    font-size: xxx-large;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+h3 {
+    background: radial-gradient(circle at bottom right, #1b1b6a, #114871);
+    padding: 10px;
+    border-radius: var(--radius-medium);
+}
+
+p {
+    background: radial-gradient(circle at bottom right, purple, #131212);
+    color: var(--text-main);
+    padding: var(--spacing-main);
+    text-align: center;
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-soft);
+}
+
+a {
+    color: var(--text-link);
+}
+
+a:hover {
+    color: var(--text-link-hover);
+    text-decoration: underline;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.main-content,
+.main-galerie {
+    flex-grow: 1;
+    padding: var(--spacing-main);
+    overflow-y: auto;
+}
+
+.main-content {
+    background: linear-gradient(to right, #e1580d, #4c52a8);
+}
+
+/* =========================
+   BLOKY & SEKCE
+========================= */
+
+header,
+section {
+    background: radial-gradient(circle at bottom right, #131212, purple);
+    padding: var(--spacing-main);
+    border-radius: var(--radius-medium);
+    text-align: center;
+    box-shadow: var(--shadow-strong);
+    margin-bottom: var(--spacing-main);
+    color: var(--text-main);
+}
+
+/* =========================
+   GRIDY
+========================= */
+
+.grid-layout,
+.grid-layout-galerie {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-main);
+    margin-top: var(--spacing-main);
+}
+
+.grid-layout-galerie {
+    width: 100%;
+    padding: var(--spacing-main);
+    margin-bottom: var(--spacing-main);
+}
+
+#nahore,
+#srovnani {
+    grid-column: span 2;
+}
+
+/* =========================
+   TABULKA
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-table);
+    box-shadow: var(--shadow-table);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--bg-table-header);
+    color: var(--text-light);
+}
+
+td {
+    color: var(--text-dark); /* Zajišťuje, že text na bílém pozadí tabulky bude vidět */
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background-color: var(--bg-row-hover);
+}
+
+tbody tr.selected {
+    background-color: var(--bg-row-selected) !important;
+}
+
+/* =========================
+   VYHLEDÁVÁNÍ (SEARCH BAR)
+========================= */
+
+.search-container {
+    margin-bottom: var(--spacing-main);
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: var(--radius-small);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* =========================
+   OBRÁZKY
+========================= */
+
+img {
+    display: block;
+    margin: var(--spacing-main) auto;
+    height: auto;
+    border-radius: var(--radius-small);
+    border: var(--image-border);
+    box-shadow: var(--shadow-soft);
+    width: 100%;
+}
+
+.kocour {
+    width: 100%;
+}
+
+.preview {
+    max-width: 600px;
+}
+
+/* =========================
+   IMAGE + POPISEK
+========================= */
+
+.image-container {
+    display: table;
+    margin: var(--spacing-main) auto;
+    text-align: center;
+}
+
+.image-container img {
+    margin: 0 auto;
+    border-bottom: none;
+    border-radius: var(--radius-small) var(--radius-small) 0 0;
+}
+
+.image-container figcaption {
+    background-color: var(--bg-image-frame);
+    color: var(--text-caption);
+    padding: 10px var(--spacing-main);
+    font-size: x-large;
+    border-radius: 0 0 var(--radius-small) var(--radius-small);
+}
+
+.redBackground {
+    /* 50 % bude jedna barva, od 50 % začne druhá */
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.purpleOrangeBackground {
+    background: radial-gradient(circle at bottom right, orange, purple);
+}
+
+.main-content {
+    background: linear-gradient(to right, #e1580d, #4c52a8);
+}
+/* =========================
+   PROZÍRAVÝ UKRYJE SE
+========================= */
+
+@media (max-width: 768px) {
+    header {
+        background-color: var(--bg-body);
+        border-color: var(--bg-body);
+        box-shadow: var(--bg-body);
+    }
+}
+

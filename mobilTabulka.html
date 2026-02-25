@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="Slovník">
+    <meta keywords="Radost">
+    <meta author="Vopalecký">
+    <meta description="Tabulka">
+    <title>Tabulka</title>
+    <link rel="stylesheet" href="mobilTabulka.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="btn-mobilmenu" class="hamburger">☰</button>
+<div class="container">
+
+    <main class="main-content">
+        <header>
+        <div class="grid-layout">
+        <section>
+            <h2>Tabulka</h2>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Vyhledat..." autocomplete="off">
+            </div>
+        </section>
+        <section class="button">
+            <h2>Nabídka</h2>
+            <button id="btn-add">Přidat</button>
+            <button id="btn-edit">Upravit</button>
+            <button id="btn-remove">Odebrat</button>
+        </section>
+        </div>
+        </header>
+        <table id="data-table">
+            <thead>
+            <tr>
+                <th>Pojem</th>
+                <th>Kategorie</th>
+                <th>Vysvětlení</th>
+                <th>Poznámka</th>
+                <th>Vytvořeno</th>
+                <th>Upraveno</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="tabulka.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

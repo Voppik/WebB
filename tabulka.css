@@ -1,0 +1,123 @@
+:root {
+    /* BARVY */
+    --bg-main: #676767;
+    --bg-table: #ffffff;
+    --bg-table-header: #4CAF50;
+    --bg-row-hover: #2fbda7;
+    --bg-row-selected: #b3e5fc;
+
+    --text-light: #f1f1f1;
+    --text-dark: #000;
+
+    /* STÍNY */
+    --shadow-table: 0 0 10px rgba(0,0,0,0.1);
+
+    /* ROZMĚRY */
+    --spacing-main: 20px;
+}
+
+/* =========================
+   ZÁKLAD
+========================= */
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: var(--spacing-main);
+    background-color: var(--bg-main);
+    overflow-y: auto;
+}
+
+section {
+    background: var(--bg-dark);
+    padding: 20px;
+    border-radius: var(--radius-medium);
+    text-align: center;
+    box-shadow: var(--shadow-strong);
+    margin-bottom: 20px;
+}
+
+.grid-layout-galerie {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   TYPOGRAFIE
+========================= */
+
+h1 {
+    color: var(--text-light);
+}
+
+/* =========================
+   TABULKA
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-table);
+    box-shadow: var(--shadow-table);
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--bg-table-header);
+    color: var(--text-light);
+}
+
+/* =========================
+   INTERAKCE ŘÁDKŮ
+========================= */
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background-color: var(--bg-row-hover);
+}
+
+tbody tr.selected {
+    background-color: var(--bg-row-selected) !important;
+}
+
+/* =========================
+   Search bar
+========================= */
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}

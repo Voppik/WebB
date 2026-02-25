@@ -1,0 +1,141 @@
+:root {
+    /* SIDEBAR */
+    --sidebar-width: 200px;
+    --bg-sidebar: #333;
+    --bg-button: #302d2d;
+    --bg-button-hover: #777;
+
+    --bg-success: #00ae07;
+    --bg-success-hover: #00cd07;
+
+    --bg-warning: #b5b500;
+    --bg-warning-hover: #737500;
+
+    --bg-danger: #d9534f;
+    --bg-danger-hover: #c9302c;
+
+    --text-light: #ffffff;
+    --text-accent: #5ecd3d;
+
+    /* ROZMĚRY */
+    --radius-small: 4px;
+    --radius-medium: 20px;
+
+    /* EFEKTY */
+    --shadow-active: 0 0 10px var(--bg-success);
+    --transition-fast: 0.3s;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: var(--sidebar-width);
+    background: radial-gradient(circle at bottom right, #131212, purple);
+    color: var(--text-light);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* =========================
+   TLAČÍTKA
+========================= */
+
+.sidebar button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text-light);
+    background-color: var(--bg-button);
+    border: none;
+    border-radius: var(--radius-small);
+    transition: background var(--transition-fast);
+}
+
+/* Hover – výchozí */
+.sidebar button:hover {
+    background-color: var(--bg-button-hover);
+}
+
+/* =========================
+   KONKRÉTNÍ AKCE
+========================= */
+
+#btn-add {
+    background-color: var(--bg-success);
+}
+
+#btn-add:hover {
+    background-color: var(--bg-success-hover);
+}
+
+#btn-edit {
+    background-color: var(--bg-warning);
+}
+
+#btn-edit:hover {
+    background-color: var(--bg-warning-hover);
+}
+
+#btn-remove {
+    background-color: var(--bg-danger);
+}
+
+#btn-remove:hover {
+    background-color: var(--bg-danger-hover);
+}
+
+/* =========================
+   AKTIVNÍ TLAČÍTKO
+========================= */
+
+.sidebar button.active {
+    background-color: var(--bg-success);
+    box-shadow: var(--shadow-active);
+    font-weight: bold;
+}
+
+/* =========================
+   NADPIS
+========================= */
+
+h3 {
+    color: var(--text-accent);
+    text-align: center;
+    background: var(--bg-dark, #3c3c3c); /* fallback */
+    padding: 10px;
+    border-radius: var(--radius-medium);
+}
+
+.hamburger {
+    display: none;
+}
+
+/* =========================
+Pro mobil (<= 768px)
+========================= */
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Na mobilu sidebar úplně smažeme ze stránky */
+    }
+    .hamburger {
+        display: block; /* Zobrazíme hamburger */
+    }
+    body {
+        display: block; /* Zrušíme flex, aby obsah nebyl vedle (neexistujícího) sidebaru */
+    }
+}
+

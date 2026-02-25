@@ -1,0 +1,84 @@
+:root {
+    /* SIDEBAR */
+    --sidebar-width: 200px;
+    --bg-sidebar: #333;
+    --bg-button: #555;
+    --bg-button-hover: #870f0f;
+
+    --bg-success: #00b104;
+    --bg-success-hover: #00d609;
+
+    --bg-warning: #b5b500;
+    --bg-warning-hover: #737500;
+
+    --bg-danger: #d9534f;
+    --bg-danger-hover: #c9302c;
+
+    --text-light: #ffffff;
+    --text-accent: #5ecd3d;
+
+    /* ROZMĚRY */
+    --radius-small: 4px;
+    --radius-medium: 20px;
+
+    /* EFEKTY */
+    --shadow-active: 0 0 10px var(--bg-success);
+    --transition-fast: 0.3s;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+/* =========================
+   KONKRÉTNÍ AKCE
+========================= */
+
+#btn-add {
+    background-color: var(--bg-success);
+}
+
+#btn-add:hover {
+    background-color: var(--bg-success-hover);
+}
+
+#btn-edit {
+    background-color: var(--bg-warning);
+}
+
+#btn-edit:hover {
+    background-color: var(--bg-warning-hover);
+}
+
+#btn-remove {
+    background-color: var(--bg-danger);
+}
+
+#btn-remove:hover {
+    background-color: var(--bg-danger-hover);
+}
+
+/* =========================
+   TLAČÍTKA
+========================= */
+
+.sidebar button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text-light);
+    background-color: var(--bg-button);
+    border: none;
+    border-radius: var(--radius-small);
+    transition: background var(--transition-fast);
+}
+
+header {
+    width: 692px;
+    display: flex;
+    flex-direction: column;
+}
