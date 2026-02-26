@@ -137,5 +137,9 @@ Pro mobil (<= 768px)
     body {
         display: block; /* Zrušíme flex, aby obsah nebyl vedle (neexistujícího) sidebaru */
     }
+    .ukryje {
+        background-color: var(--bg-body);
+        box-shadow: var(--bg-body);
 }
+
 
