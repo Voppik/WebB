@@ -25,6 +25,7 @@ pridatOdkaz("btn-tabulka", "tabulka.html");
 pridatOdkaz("btn-projekty", "projekty.html");
 pridatOdkaz("btn-galerie", "galerie.html");
 pridatOdkaz("btn-mobilmenu", "mobilmenu.html");
+pridatOdkaz("btn-mobilTabulka", "mobilTabulka.html");
 
 
 // --- 2. ČÁST: Zvýraznění aktivního tlačítka ---
@@ -56,6 +57,8 @@ function highlightActiveButton() {
             } else if (path.includes("projekty") && button.id === "btn-projekty") {
                 button.classList.add("active");
             } else if (path.includes("galerie") && button.id === "btn-galerie") {
+                button.classList.add("active");
+            } else if (path.includes("tabulka") && button.id === "btn-mobilTabulka") {
                 button.classList.add("active");
             }
         }
