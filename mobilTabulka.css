@@ -138,8 +138,13 @@ Pro mobil (<= 768px)
         display: block; /* Zrušíme flex, aby obsah nebyl vedle (neexistujícího) sidebaru */
     }
     .ukryje {
-        background-color: var(--bg-body);
+        
         box-shadow: var(--bg-body);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-main);
+        padding: var(--spacing-main);
 }
+
 
 
